@@ -38,18 +38,37 @@ public class AppTest
         assertTrue( true );
     }
 public void testFound() {
-ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-assertTrue(new App().search(array, 4));
+ArrayList<Integer> array = new ArrayList<>(Arrays.asList(5,6,7,8));
+ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1,2,3,4));
+assertTrue(new App().search(array,array2,1,2));
 }
+
 public void testNotFound() {
 ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-assertFalse(new App().search(array, 5));
+ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(5, 6, 7, 8));
+assertFalse(new App().search(array,array2,0,1));
 }
+
 public void testEmptyArray() {
 ArrayList<Integer> array = new ArrayList<>();
-assertFalse(new App().search(array, 1));
+ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(5, 6, 7, 8));
+assertFalse(new App().search(array,array2, 0,0));
 }
+
 public void testNull() {
-assertFalse(new App().search(null, 1));
+ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(5, 6, 7, 8));
+assertFalse(new App().search(null,array2,0, 0));
+}
+
+public void testIndexOutOfBounds() {
+ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(5, 6, 7, 8));
+assertFalse(new App().search(array,array2,10, 11));
+}
+
+public void testIntegersAreEqual(){
+ArrayList<Integer> array = new ArrayList<>(Arrays.asList(5, 6, 7, 8));
+ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+assertFalse(new App().search(array,array2,2, 2));
 }
 }
