@@ -28,7 +28,7 @@ public static boolean search(ArrayList<Integer> array, ArrayList<Integer> array2
     if (array == null) return false;
     if (array2 == null) return false;
     if(array2.size()==0 && array.size()==0) return false;
-    if(e>array2.size() && e2>array2.size())
+    if(e>array2.size() || e2>array2.size())
     {
         return false;
     }
